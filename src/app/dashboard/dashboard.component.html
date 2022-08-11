@@ -1,0 +1,39 @@
+<div style="text-align: center" *ngIf="!image">
+  <div class="parent-container">
+    <div class="green-box">
+      <video
+        [width]="500"
+        [height]="653"
+        id="video"
+        poster="../../assets/help_lines.png"
+        autoplay
+      ></video>
+    </div>
+    <div class="red-box">
+      <img
+        class="helplines"
+        src="../../assets/help_lines.png"
+        [width]="500"
+        [height]="653"
+      />
+    </div>
+  </div>
+  <br />
+
+  <button (click)="capture()">
+    <img width="100" height="100" src="../assets/photo.png" alt="Click here" />
+  </button>
+  <br />
+</div>
+<div style="text-align: center" class="snapshot" *ngIf="image">
+  <!-- <h2>Here is your image!</h2> -->
+  <img [src]="image" />
+  <div>
+    <button>
+      <img width="100" height="100" src="../assets/check.png" />
+    </button>
+    <button (click)="cancelImage()">
+      <img width="100" height="100" src="../assets/delete.png" />
+    </button>
+  </div>
+</div>
